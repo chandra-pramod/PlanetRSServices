@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.planetdb.dao.TrafficRepository;
-import com.planetdb.model.Planet;
 import com.planetdb.model.Traffic;
 
 @RestController
 public class TrafficController {
 	
-private final TrafficRepository repository;
+	private TrafficRepository repository;
 	
 	public TrafficController(TrafficRepository repository) {
 		this.repository = repository;
 	}
-	
+
+
 	@GetMapping("/traffic/")
 	List<Traffic> getAll() {
 		return repository.findAll();

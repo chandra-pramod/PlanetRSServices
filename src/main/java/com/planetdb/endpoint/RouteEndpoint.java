@@ -10,6 +10,7 @@ import com.shortestpath.routes.RouteRequest;
 import com.shortestpath.routes.RouteResponse;
 
 
+
 @Endpoint
 public class RouteEndpoint {
 
@@ -24,6 +25,6 @@ public class RouteEndpoint {
 	@ResponsePayload
 	public RouteResponse getShortestRoute(@RequestPayload RouteRequest request) {
 		
-		return service.getRouteResponse(request);
+		return service.getRouteResponse(request.getPlanetDestination());
 	}
 }

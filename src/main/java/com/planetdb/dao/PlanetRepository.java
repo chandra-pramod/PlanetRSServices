@@ -7,5 +7,7 @@ import com.planetdb.model.Planet;
 
 @Repository
 public interface PlanetRepository extends JpaRepository<Planet, Long> {
+	
+	Planet findByPlanetNode(String planetNode);
 
 }

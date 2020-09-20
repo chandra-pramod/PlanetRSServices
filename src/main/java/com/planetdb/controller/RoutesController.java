@@ -16,7 +16,8 @@ import com.planetdb.model.Routes;
 @RestController
 public class RoutesController {
 	
-	private final RoutesRepository repository;
+	
+	private RoutesRepository repository;
 	
 	public RoutesController(RoutesRepository repository) {
 		this.repository = repository;
@@ -28,6 +29,7 @@ public class RoutesController {
 	}
 
 	@GetMapping("/routes/{id}")
+	
 	Routes getRoutes(Long id) {
 		return repository.getOne(id);
 	}
